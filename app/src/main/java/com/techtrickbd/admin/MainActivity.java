@@ -7,18 +7,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 
 import com.darsh.multipleimageselect.activities.AlbumSelectActivity;
 import com.darsh.multipleimageselect.helpers.Constants;
 import com.darsh.multipleimageselect.models.Image;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,17 +47,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_OK) {
             ArrayList<Image> images = data.getParcelableArrayListExtra(Constants.INTENT_EXTRA_IMAGES);
-            Uri[] uri=new Uri[images.size()];
+            final Uri[] uri=new Uri[images.size()];
             for (int i =0 ; i < images.size(); i++) {
                 uri[i] = Uri.parse("file://"+images.get(i).path);
-                storageRef = storage.getReference("photos");
+                storageRef = storage.getReference("hotelPhotos");
                 final StorageReference ref = storageRef.child(uri[i].getLastPathSegment());
                 ref.putFile(uri[i])
                         .addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                Task<Uri> down=taskSnapshot.getStorage().getDownloadUrl();
+                                Log.d("downloadurl",uri.toString());
                                 /*Uri downloadUrl = taskSnapshot.getDownloadUrl();
                                 String content = downloadUrl.toString();
                                 if (content.length() > 0) {
