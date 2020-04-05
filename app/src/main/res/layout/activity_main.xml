@@ -14,10 +14,23 @@
 
 
         <ImageView
+            android:id="@+id/select_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:onClick="uploadImages"
             android:src="@drawable/uploadimageicon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Wait..."
+            android:id="@+id/selection_text"
+            android:visibility="gone"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="UploadImages"
+            android:text="Upload"/>
 
         <EditText
             android:id="@+id/hotelnameET"
@@ -1054,6 +1067,12 @@
             android:layout_height="wrap_content"
             android:text="Mastercard"
             android:textSize="18sp"/>
+
+        <ExpandableListView
+            android:id="@+id/location_list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
 
     </LinearLayout>
