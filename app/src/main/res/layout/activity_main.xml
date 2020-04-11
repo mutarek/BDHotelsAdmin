@@ -30,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="UploadImages"
-            android:text="Upload"/>
+            android:text="Upload"
+            android:visibility="gone"/>
 
         <EditText
             android:id="@+id/hotelnameET"
@@ -55,19 +56,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/room_left_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/room0"
+                android:onClick="OnHotelRoomClicked"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/room1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -77,7 +83,8 @@
             android:text="Facilities:"
             android:textAlignment="textEnd"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -90,19 +97,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/internet_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/internet0"
+                android:onClick="OnHotelRoomClicked"
+                android:checked="true"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/internet1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -111,25 +124,32 @@
             android:layout_height="wrap_content"
             android:text="Pet Allowed?"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/pet_group">
+
+            <RadioButton
+                android:onClick="OnHotelRoomClicked"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes"
+                android:id="@+id/pet0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/pet1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -144,19 +164,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/parking_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/parking0"
+                android:onClick="OnHotelRoomClicked"
+                android:checked="true"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/parking1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -171,19 +197,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/couple_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/couple0"
+                android:checked="true"
+                android:onClick="OnHotelRoomClicked"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/couple1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -198,19 +230,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/shuttle_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/shuttle0"
+                android:onClick="OnHotelRoomClicked"
+                android:checked="true"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/shuttle1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -225,19 +263,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/lunch_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/lunch0"
+                android:onClick="OnHotelRoomClicked"
+                android:checked="true"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/lunch1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -246,25 +290,32 @@
             android:layout_height="wrap_content"
             android:text="Gift Shop?"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/shop_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/shop0"
+                android:checked="true"
+                android:onClick="OnHotelRoomClicked"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/shop1"
+                android:onClick="OnHotelRoomClicked"/>
 
         </RadioGroup>
 
@@ -279,19 +330,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/bridal_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/bridal0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/bridal1"/>
 
         </RadioGroup>
 
@@ -306,19 +360,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/sharedlungh">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/sharedlungs0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/sharedlung1"/>
 
         </RadioGroup>
 
@@ -333,19 +390,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/lift_group">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/lift0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/lift1"/>
 
         </RadioGroup>
 
@@ -360,13 +420,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/airfortshuttlegroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/airfortshuttle0"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No"
+                android:id="@+id/airfprtshuttle1"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room Service?"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="25sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/roomsgroup">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes"
+                android:id="@+id/rooms1"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -387,46 +479,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/roomservicegroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/roomserviec0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Room Service?"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Yes" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/roomservice1"/>
 
         </RadioGroup>
 
@@ -441,19 +509,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/acgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/ac0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/ac1"/>
 
         </RadioGroup>
 
@@ -468,19 +539,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/viproomgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/viproom0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/viproom1"/>
 
         </RadioGroup>
 
@@ -495,19 +569,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/newspapergroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/newspaper0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/newspaper1"/>
 
         </RadioGroup>
 
@@ -522,19 +599,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/smokinggroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/smoking0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/smoking1"/>
 
         </RadioGroup>
 
@@ -549,76 +629,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/car_hiregroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/cardhire0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/carhire1"/>
 
         </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Car Hire?"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Yes" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No" />
-
-        </RadioGroup>
-
-        <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Car Hire?"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="25sp" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Yes" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No" />
-
-        </RadioGroup>
-
 
         <TextView
             android:layout_width="match_parent"
@@ -639,19 +667,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/ownrestrantgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/ownresturant0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/ownresturant1"/>
 
         </RadioGroup>
 
@@ -701,19 +732,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/frontdeskgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/frontdesk0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/frontdesk1"/>
 
         </RadioGroup>
 
@@ -728,19 +762,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/atmgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/atm0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/atm1"/>
 
         </RadioGroup>
 
@@ -755,19 +792,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/exchangegroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/exchange0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/exchange1"/>
 
         </RadioGroup>
 
@@ -782,19 +822,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/lockersgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/lockers0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/locker1"/>
 
         </RadioGroup>
 
@@ -809,19 +852,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/luggagegroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/luggage0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/luggage1"/>
 
         </RadioGroup>
 
@@ -836,19 +882,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/tourdeskgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/tourdesk0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/tourdesk1"/>
 
         </RadioGroup>
 
@@ -870,19 +919,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/fitnessgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/fitness0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/fitness1"/>
 
         </RadioGroup>
 
@@ -891,25 +943,29 @@
             android:layout_height="wrap_content"
             android:text="Kids Club?"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/kidsclubgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/kidsclub0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/kidsclub1"/>
 
         </RadioGroup>
 
@@ -924,19 +980,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/tabletennisgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/tebletennis0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/tabletennis1"/>
 
         </RadioGroup>
 
@@ -958,7 +1017,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            >
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -985,19 +1045,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/sunumbrellagroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Yes" />
+                android:text="Yes"
+                android:id="@+id/sunumbrellagroup0"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No" />
+                android:text="No"
+                android:id="@+id/sunumbrellagroup1"/>
 
         </RadioGroup>
 
@@ -1019,7 +1082,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cheeck In"
+            android:text="Cheeck Out"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="25sp" />
 
@@ -1027,19 +1090,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:id="@+id/checkoutgroup">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="10:00 AM" />
+                android:text="10:00 AM"
+                android:id="@+id/check1"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="11:00 AM" />
+                android:text="11:00 AM"
+                android:id="@+id/check2"/>
 
         </RadioGroup>
 
@@ -1054,24 +1120,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="American Express"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:id="@+id/americanexpress"/>
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Visa"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:id="@+id/visa"/>
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mastercard"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:id="@+id/mastercard"/>
 
-        <ExpandableListView
+        <Button
             android:id="@+id/location_list_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="submit"/>
 
 
 
